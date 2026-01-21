@@ -24,3 +24,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Brand accents (logo red) */
+a {
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Better focus for inputs/buttons */
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: rgb(220 38 38);            /* red-600 */
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.18);
+}
