@@ -10,7 +10,8 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# testingapp → page.tsx
+
 /coverage
 
 # next.js
@@ -39,3 +40,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+app → page.ts
