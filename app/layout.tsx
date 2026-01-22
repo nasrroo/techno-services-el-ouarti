@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import IntroSplash from "@/components/IntroSplash";
 import { site } from "@/lib/site";
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: `${site.name} | ${site.tagline}`,
@@ -24,11 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className="min-h-screen bg-white text-zinc-900">
+      <body className="min-h-screen bg-zinc-950 text-white">
+        <IntroSplash />
         <Navbar />
         <main className="mx-auto w-full max-w-6xl px-4 py-8">{children}</main>
         <Footer />
