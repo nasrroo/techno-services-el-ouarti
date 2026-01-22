@@ -42,3 +42,33 @@ input:focus, select:focus, textarea:focus {
   border-color: rgb(220 38 38);            /* red-600 */
   box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.18);
 }
+/* ---------- DARK SECTION FIX ---------- */
+.dark-section {
+  color: rgb(228 228 231); /* zinc-200 */
+}
+
+.dark-section h1,
+.dark-section h2,
+.dark-section h3 {
+  color: white;
+}
+
+.dark-section p {
+  color: rgb(212 212 216); /* zinc-300 */
+}
+
+.dark-section li {
+  color: rgb(212 212 216); /* zinc-300 */
+}
+
+.dark-section ul li::marker {
+  color: rgb(220 38 38); /* red-600 */
+}
+
+.dark-section .muted {
+  color: rgb(161 161 170); /* zinc-400 */
+}
+
+.dark-section .card {
+  border-color: rgba(255, 255, 255, 0.18);
+}
