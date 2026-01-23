@@ -122,18 +122,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CLIENTS */}
+      {/* CLIENTS (fixed: Yazaki + ERUM separated) */}
       <section className="rounded-3xl border border-white/20 bg-white/5 p-8">
         <div className="text-sm font-semibold text-white">Références industrielles</div>
         <p className="mt-2 text-sm text-zinc-300">
-          Ils nous font confiance (exemples):
+          Ils nous font confiance (exemples) :
         </p>
 
-        <div className="mt-5 grid gap-3 md:grid-cols-3">
-          {site.clients.map((c) => (
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+          {[
+            "LEAR Corporation",
+            "Yazaki",
+            "Magneti Marelli",
+            "COFICAB",
+            "ACOME Group",
+            "ERUM",
+            "Elastomer Solutions",
+            "Brillas Agusti",
+          ].map((c) => (
             <div
               key={c}
-              className="rounded-2xl border border-white/15 bg-white/5 p-4 text-center text-sm font-semibold text-white"
+              className="rounded-2xl border border-white/15 bg-zinc-950/40 p-4 text-center text-sm font-semibold text-white"
             >
               {c}
             </div>
@@ -156,7 +165,10 @@ export default function HomePage() {
             { t: "3. Exécution", d: "Intervention propre, sécurisée, traçable." },
             { t: "4. Rapport", d: "Compte rendu + recommandations." },
           ].map((s) => (
-            <div key={s.t} className="rounded-3xl border border-white/20 bg-white/5 p-6">
+            <div
+              key={s.t}
+              className="rounded-3xl border border-white/20 bg-white/5 p-6"
+            >
               <div className="text-sm font-semibold text-white">{s.t}</div>
               <p className="mt-2 text-sm text-zinc-200">{s.d}</p>
             </div>
