@@ -1,31 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
 import { site } from "@/lib/site";
 
 export default function ContactPage() {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [need, setNeed] = useState("");
-
-  function handleSendWhatsApp() {
-    const text =
-      `Demande de devis – ${site.name}\n\n` +
-      `Nom / Société: ${name}\n` +
-      `Téléphone: ${phone}\n` +
-      `Email: ${email}\n\n` +
-      `Besoin:\n${need}`;
-
-    // whatsappNumber must be digits only (example: 212654276580)
-    const url = `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(
-      text
-    )}`;
-
-    window.open(url, "_blank");
-  }
-
   return (
     <div className="space-y-10">
       <header className="space-y-3">
@@ -123,51 +99,40 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* FORM -> WhatsApp */}
+        {/* FORM */}
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
           <div className="text-lg font-semibold text-white">Demande de devis</div>
           <p className="mt-2 text-sm text-zinc-300">
-            Remplissez ce formulaire — le message s’ouvrira dans WhatsApp.
+            Remplissez ce formulaire — on peut le connecter à l’email ensuite.
           </p>
 
-          <div className="mt-5 space-y-3">
+          <form className="mt-5 space-y-3">
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
               className="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-500"
               placeholder="Nom / Société"
             />
             <input
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
               className="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-500"
               placeholder="Téléphone"
             />
             <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-500"
               placeholder="Email"
             />
             <textarea
-              value={need}
-              onChange={(e) => setNeed(e.target.value)}
               className="min-h-[120px] w-full rounded-xl border border-white/10 bg-zinc-950/60 px-4 py-3 text-sm text-white placeholder:text-zinc-500"
               placeholder="Décrivez votre besoin (maintenance, dépannage, installation...)"
             />
-
             <button
-  type="button"
-  onClick={handleSendWhatsApp}
-  className="w-full rounded-xl bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-700"
->
-  Envoyer
-</button>
-          </div>
+              type="button"
+              className="w-full rounded-xl bg-red-600 px-5 py-3 text-sm font-semibold text-white hover:bg-red-700"
+            >
+              Envoyer
+            </button>
+          </form>
 
           <p className="mt-3 text-xs text-zinc-500">
-            Astuce : vérifiez que <b>whatsappNumber</b> dans <b>lib/site.ts</b> est
-            au format <b>212XXXXXXXXX</b> (sans +, sans espaces).
+            Étape suivante : connecter ce formulaire à l’email / WhatsApp.
           </p>
         </div>
       </section>
